@@ -1,0 +1,8 @@
+<div *ngIf="visible" [formGroup]="this.model">{{title}}
+  <input type="text"
+    [formControlName]="name"
+    [placeholder]="placeholder"
+    [attr.readonly]="readOnly ? true : null"
+    >
+    <span *ngIf="required">*</span>
+</div>
