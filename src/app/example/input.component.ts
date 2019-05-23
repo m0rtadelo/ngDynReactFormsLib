@@ -12,6 +12,9 @@ import { DynControl } from '../../lib';
     >
     <span *ngIf="required">*</span>
   </div>
+  <div *ngIf="this.model.get(name).errors">
+    {{ this.model.get(name).errors | json }}
+  </div>
   `
 })
 export class InputComponent extends DynControl {
