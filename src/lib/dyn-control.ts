@@ -1,8 +1,7 @@
-import { OnInit, Input, Output, ElementRef, OnDestroy, EventEmitter } from '@angular/core';
+import { OnInit, Input, ElementRef } from '@angular/core';
 import { Validators, ValidationErrors } from '@angular/forms';
 import { MyFormGroup } from './MyFormGroup';
 import { MyFormControl } from './myFormControl';
-import { isRegExp } from 'util';
 enum Expect {Number, Date}
 
 export class DynControl implements OnInit {
@@ -75,7 +74,6 @@ export class DynControl implements OnInit {
   }
 
   public get required(): boolean {
-    // this.model.get(this.name).validator.
     return this._required;
   }
 
@@ -199,9 +197,9 @@ export class DynControl implements OnInit {
   }
 
   private setValidatorPattern(): void {
-    if (isRegExp(this._pattern)) {
-      this.validators.push(Validators.pattern(this._pattern));
-    }
+    if(this._pattern) {
+        this.validators.push(Validators.pattern(this._pattern));
+      }
   }
 
   private setValidatorEmail(): void {
@@ -221,7 +219,7 @@ export class DynControl implements OnInit {
       if (!this.model.contains(this.name)) {
         this.model.addControl(
           this.name,
-          new MyFormControl(null, this.validators, null, this.input)
+          new MyFormControl(null, this.validators, null, this.input, this)
         );
       }
     }
