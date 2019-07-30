@@ -3,8 +3,16 @@
     {{ title }}!
   </h1>
 <form [formGroup]="model">
- <app-my-input name="name" [model]="model" title="Name:" [required]="true" placeholder="enter name" [maxLength]=18></app-my-input>
- <app-my-input name="surname" [model]="model" title="Surname:" [readOnly]="!!!this.model.get('name').value" placeholder="enter surname" [maxLength]=18></app-my-input>
+ <app-my-input name="name" [model]="model" title="Name:" [required]="true" placeholder="enter name" [maxLength]=18 (Change)="this.onChange"></app-my-input>
+ <app-my-input name="surname" [model]="model" title="Surname:" [readOnly]="!!!this.model.get('name').value" placeholder="enter surname" [maxLength]=18
+ [required]="this.model.get('name').value === 'Ricard'"></app-my-input>
+ <app-my-input name="email" [model]="model" title="e-mail:" placeholder="enter e-mail" [maxLength]=255 [email]="true" [required]="true"></app-my-input>
+ <app-my-input name="age" [model]="model" title="Age:" placeholder="enter age" [maxLength]=3 [min]=18 [max]=150 [expect]="0" [required]="true"></app-my-input>
+ <app-my-input name="description" [model]="model" title="Description:" placeholder="Finish with dot" [required]="true" pattern="^[a-z0-9_-]{8,15}$"></app-my-input>
 </form>
 <button (click)="this.showModel()">Show Model values</button>
+<!--
 <rfm-dyngroup></rfm-dyngroup>
+-->
+</div>
+
