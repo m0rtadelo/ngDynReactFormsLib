@@ -79,6 +79,12 @@ export class ExampleComponent extends DynGroup {
 * `required` sets the required validator of a field. Default false
 * `minLength` sets the minLength validator of field. Default undefined (not set)
 * `maxLength` sets the maxLength validator of a field. Default undefined (not set)
+* `min` sets the minimum valid numeric value. Default undefined (not set)
+* `max` sets the maximum valid numeric value. Default undefined (not set)
+* `pattern` sets the valid RegExp pattern. Default undefined (not set)
+* `email` sets the email validator of a field. Default false
+* `requiredTrue` sets the required (only true value) validator of a field. Default false
+* `expect` sets the expect type (Number or Date) of a value. Default undefined (not set)
 
 ## Built-in view state
 
