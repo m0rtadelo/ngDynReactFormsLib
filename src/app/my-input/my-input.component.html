@@ -5,4 +5,7 @@
     [attr.readonly]="readOnly ? true : null"
     >
     <span *ngIf="required">*</span>
+    <div *ngIf="this.model.get(name).errors">
+      {{ this.model.get(name).errors | json }}
+    </div>
 </div>
