@@ -1,0 +1,12 @@
+<div *ngIf="visible" [formGroup]="this.model">{{title}}
+  <input type="checkbox"
+    [placeholder]="placeholder"
+    [attr.readonly]="readOnly ? true : null"
+    [checked]="this.model.get(name).value | check"
+    (change)="fireChange($event)"
+    >
+    <span *ngIf="required">*</span>
+    <div *ngIf="this.model.get(name).errors">
+      {{ this.model.get(name).errors | json }}
+    </div>
+</div>

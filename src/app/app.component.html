@@ -9,8 +9,13 @@
  <app-my-input name="email" [model]="model" title="e-mail:" placeholder="enter e-mail" [maxLength]=255 [email]="true" [required]="true"></app-my-input>
  <app-my-input name="age" [model]="model" title="Age:" placeholder="enter age" [maxLength]=3 [min]=18 [max]=150 [expect]="0" [required]="true"></app-my-input>
  <app-my-input name="description" [model]="model" title="Description:" placeholder="Finish with dot" [required]="true" pattern="^[a-z0-9_-]{8,15}$"></app-my-input>
+ <app-my-check name="hero" [model]="model" title="Is hero"></app-my-check>
+ <app-my-check name="boy" [model]="model" title="Is boy" [required]="true"></app-my-check>
+ <app-my-check name="bad" [model]="model" title="Is bad"></app-my-check>
+ <app-my-check name="inutil" [model]="model" title="Is ignored" [readOnly]="true"></app-my-check>
 </form>
 <button (click)="this.showModel()">Show Model values</button>
+<button (click)="this.loadModel()">Load Model values</button>
 <!--
 <rfm-dyngroup></rfm-dyngroup>
 -->

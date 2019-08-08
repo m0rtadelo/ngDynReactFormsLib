@@ -14,4 +14,14 @@ export class AppComponent extends DynGroup implements OnInit {
     console.log(this.model);
   }
 
+  loadModel() {
+    const check = prompt('Enter S or N for check', 'S');
+    this.model.patchValue({
+      name: 'name',
+      surname: 'maverick',
+      hero: check,
+      bad: 'N',
+      boy: 'S'
+    });
+  }
 }

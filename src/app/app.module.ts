@@ -6,6 +6,8 @@ import { DynModule } from '../lib';
 import { MyInputComponent } from './my-input/my-input.component';
 import { ExampleComponent } from './example/example.component';
 import { InputComponent } from './example/input.component';
+import { MyCheckComponent } from './my-check/my-check.component';
+import { CheckPipe } from './my-check/my-check.pipe';
 
 
 @NgModule({
@@ -14,6 +16,8 @@ import { InputComponent } from './example/input.component';
     MyInputComponent,
     ExampleComponent,
     InputComponent,
+    MyCheckComponent,
+    CheckPipe,
   ],
   imports: [
     BrowserModule,
